@@ -1,24 +1,9 @@
 from fastapi import FastAPI, status, HTTPException
-from pydantic import BaseModel, Field
-from database import get_connection
+from model.models import User, UserResponse
+from backend.database import get_connection, create_table
 
+create_table()
 app = FastAPI()
-
-
-# -------------------------
-# Pydantic Models
-# -------------------------
-
-class User(BaseModel):
-    name: str = Field(..., description="The name of the user")
-    age: int = Field(..., gt=0, lt=150, description="The age of the user")
-
-
-class UserResponse(BaseModel):
-    user_id: int
-    name: str
-    age: int
-
 
 # -------------------------
 # GET all users
@@ -57,7 +42,7 @@ def read_users():
 )
 def create_user(user: User):
 
-    connection = get_connection()
+    connection =get_connection()
     cursor = connection.cursor()
 
     cursor.execute(
