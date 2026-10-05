@@ -9,5 +9,6 @@ dependencies = [
     "httpx>=0.28.1",
     "pydantic>=2.13.5",
     "requests>=2.34.2",
+    "streamlit>=1.65.0",
     "uvicorn>=0.54.0",
 ]

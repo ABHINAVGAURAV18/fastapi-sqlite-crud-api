@@ -20,8 +20,7 @@ def create_table():
     connection.commit()
     connection.close()
 
-    return "Table created successfully."
 
-
-create_table()
-
+if __name__ == "__main__":
+    create_table()
+    print("Table created successfully.")
