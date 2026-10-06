@@ -30,8 +30,8 @@ jobs:
       - name: Build and Push Backend
         uses: docker/build-push-action@v7
         with:
-          context: .
-          file: practice_python/backend/Dockerfile.backend
+          context: ./backend
+          file: ./backend/Dockerfile.backend
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-crud-backend:latest
@@ -40,8 +40,8 @@ jobs:
       - name: Build and Push Frontend
         uses: docker/build-push-action@v7
         with:
-          context: .
-          file: practice_python/frontend/Dockerfile.frontend
+          context: ./frontend
+          file: ./frontend/Dockerfile.frontend
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-crud-frontend:latest
