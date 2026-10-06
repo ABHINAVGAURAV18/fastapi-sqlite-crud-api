@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: .
-          file: ./backend/Dockerfile.backend
+          file: practice_python/backend/Dockerfile.backend
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-crud-backend:latest
@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: .
-          file: ./frontend/Dockerfile.frontend
+          file: practice_python/frontend/Dockerfile.frontend
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-crud-frontend:latest
