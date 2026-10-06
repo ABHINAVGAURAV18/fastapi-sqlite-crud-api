@@ -5,8 +5,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-COPY requirements-backend.txt .
-RUN pip install --no-cache-dir -r requirements-backend.txt \
+COPY requirements_backend.txt .
+RUN pip install --no-cache-dir -r requirements_backend.txt \
     && useradd --create-home appuser
 
 COPY --chown=appuser:appuser backend.py ./
