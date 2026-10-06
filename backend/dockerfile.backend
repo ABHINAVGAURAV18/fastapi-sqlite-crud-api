@@ -9,7 +9,7 @@ COPY requirements-backend.txt .
 RUN pip install --no-cache-dir -r requirements-backend.txt \
     && useradd --create-home appuser
 
-COPY --chown=appuser:appuser main.py backend.py ./
+COPY --chown=appuser:appuser backend.py ./
 USER appuser
 
 EXPOSE 8000
